@@ -76,3 +76,5 @@ get imagePath(){
 [avatar] = "users[4].avatar"
 [name]="users[4].name"
 */
+git remote add origin https://github.com/baroni4434/first-angular-app.git
+git branch -M main
