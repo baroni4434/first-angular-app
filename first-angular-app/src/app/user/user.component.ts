@@ -1,6 +1,17 @@
 import {Component,computed ,signal , Input , input, Output , EventEmitter , output} from '@angular/core';
 import {DUMMY_USERS} from '../dummy-users'
+/*
+type User = {
+id: string;
+avatar: string;
+name: string;
+}*/
+interface User {
+id:string;
+avatar:string;
+name:string;
 
+}
 
 @Component({
  selector: 'app-user',
@@ -10,12 +21,8 @@ import {DUMMY_USERS} from '../dummy-users'
 })
 
 export class UserComponent{
-@Input({required:true}) user!:
-{
- id:string;
- avatar:string;
- name:string;
-};
+@Input({required:true}) user!: User;
+
 @Output() select = new EventEmitter<string>();
 
 selectedUser = signal(DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)]);
@@ -76,5 +83,4 @@ get imagePath(){
 [avatar] = "users[4].avatar"
 [name]="users[4].name"
 */
-git remote add origin https://github.com/baroni4434/first-angular-app.git
-git branch -M main
+

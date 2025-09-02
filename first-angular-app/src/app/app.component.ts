@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  NgFor , NgIf} from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy-users';
@@ -8,13 +9,13 @@ import { TasksComponent } from './tasks/tasks.component';
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'], // <-- düzeltildi
-  imports: [HeaderComponent, UserComponent, TasksComponent]
+  styleUrls: ['./app.component.css'],
+  imports: [HeaderComponent, UserComponent, TasksComponent, NgFor , NgIf]
 })
 export class AppComponent {
   title = 'first-angular-app';
   users = DUMMY_USERS.slice(1,2);
-  selectedUserId = 'u1';
+  selectedUserId?: string;
 
    get selectedUser() {
      return this.users.find((user) => user.id === this.selectedUserId);
