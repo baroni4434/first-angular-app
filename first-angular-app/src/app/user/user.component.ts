@@ -1,18 +1,7 @@
 import {Component,computed ,signal , Input , input, Output , EventEmitter , output} from '@angular/core';
 import {DUMMY_USERS} from '../dummy-users'
-/*
-type User = {
-id: string;
-avatar: string;
-name: string;
-}*/
-interface User {
-id:string;
-avatar:string;
-name:string;
 
-}
-
+import {type User} from './user.model';
 @Component({
  selector: 'app-user',
  standalone: true,
@@ -22,7 +11,7 @@ name:string;
 
 export class UserComponent{
 @Input({required:true}) user!: User;
-
+@Input({required:true}) selected!:boolean;
 @Output() select = new EventEmitter<string>();
 
 selectedUser = signal(DUMMY_USERS[Math.floor(Math.random() * DUMMY_USERS.length)]);
