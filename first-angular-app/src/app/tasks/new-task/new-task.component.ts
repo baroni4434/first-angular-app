@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, signal } from '@angular/core';
+import { Component, Output, EventEmitter, signal, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { type NewTaskData } from '../task/task.model';
 
@@ -10,6 +10,8 @@ import { type NewTaskData } from '../task/task.model';
   styleUrls: ['./new-task.component.css']
 })
 export class NewTaskComponent {
+  @Input({ required: true }) userId!: string;
+
   @Output() cancel = new EventEmitter<void>();
   @Output() add = new EventEmitter<NewTaskData>();
 

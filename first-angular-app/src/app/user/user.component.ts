@@ -1,12 +1,13 @@
-import {Component,computed ,signal , Input , input, Output , EventEmitter , output} from '@angular/core';
+import {Component,computed ,signal , Input , input, Output , EventEmitter , output,} from '@angular/core';
 import {DUMMY_USERS} from '../dummy-users'
-
+import { CardComponent } from '../shared/card/card.component';
 import {type User} from './user.model';
 @Component({
  selector: 'app-user',
  standalone: true,
  templateUrl:'./user.component.html',
- styleUrl:'./user.component.css'
+ styleUrl:'./user.component.css',
+ imports:[CardComponent]
 })
 
 export class UserComponent{
